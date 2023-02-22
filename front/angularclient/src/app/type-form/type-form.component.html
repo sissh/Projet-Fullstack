@@ -1,0 +1,19 @@
+<div class="card my-5 align-items-center justify-content-center">
+    <div class="card-body">
+        <form (ngSubmit)="onSubmit()" #typeForm="ngForm">
+            <div class="form-group">
+                <label for="type">Type</label>
+                <input type="text" [(ngModel)]="type.type" class="form-control" id="type" name="type" placeholder="Enter the type" required #name="ngModel">
+            </div>
+            <div [hidden]="!name.pristine" class="alert alert-danger">Type is required</div>
+
+            <div class="form-group">
+                <label for="email">Description</label>
+                <input type="text" [(ngModel)]="type.description" class="form-control" id="description" name="description" placeholder="Enter the description" required #name="ngModel">
+            </div>
+            <div [hidden]="!name.pristine" class="alert alert-danger">Description is required</div>
+
+            <button type="submit" [disabled]="!typeForm.form.valid" class="btn btn-info">Submit</button>
+        </form>
+    </div>
+</div>

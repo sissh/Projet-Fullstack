@@ -1,0 +1,22 @@
+<div class="card my-5 align-items-center justify-content-center">
+    <div class="card-body">
+        <div class="table table-bordered table-striped table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col">Type</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Edit</th>
+                    <th scope="col">Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor = "let type of userTypes">
+                    <td>{{ type.type }}</td>
+                    <td>{{ type.description }}</td>
+                    <td><a [routerLink]="['/edittype', {'type' : type.type}]" class="btn btn-info">Edit</a></td>
+                    <td><a [routerLink]="['/deletetype', {'type': type.type}]" class="btn btn-danger">Delete</a></td>
+                </tr>
+            </tbody>
+        </div>
+    </div>
+</div>
